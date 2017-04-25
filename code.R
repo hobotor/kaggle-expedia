@@ -150,7 +150,7 @@ tr1=tr[index_train]
 
 dl=date_lst[1]
 fact_lst=c("user_id","srch_destination_id","user_location_city","hotel_market")
-prep_tab<-function(dt=tt1,lst_fact=fact_lst,date_lim=dl)
+
 for(fact in fact_lst){
   load(paste0("final/",fact,"_hc",1,"_train_",dl,".rd"))
   fact.tab[,yearmonth_srch:=as.integer(yearmonth_srch)]
