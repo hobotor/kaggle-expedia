@@ -199,7 +199,7 @@ stopifnot(!anyNA(tr1))
 stopifnot(!anyNA(tt1))
 
 
-fields_lst=names(tt1.lst)[c(6,2,3,4,11:410)]  
+fields_lst=names(tt1.lst)[c(6:406)]  
 
 tt1=tt1[                     ,mget(fields_lst)]
 
@@ -255,7 +255,7 @@ tt=prep_tab(dt=tt,lst_fact=fact_lst,date_lim=201412)
 tt[,(names(tt)[-c(1,6)]):=lapply(.SD, na.fill,fill=0),.SDcols=-c(1,6)]
 
 stopifnot(!anyNA(tt))
-fields_lst=names(tt1.lst)[c(6,2,3,4,11:410)]
+fields_lst=names(tt1.lst)[c(6:406)]
 tt=tt[                     ,mget(fields_lst)]
 ttm=sparse.model.matrix(hotel_cluster~-1+.,data=tt)
 dtest <- xgb.DMatrix(data=ttm,label=tt[,hotel_cluster])
